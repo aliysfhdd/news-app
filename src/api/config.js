@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URI = "https://today.line.me/id/"
+const URI = "https://cors.bridged.cc/https://today.line.me/id/"
 
 export const Axios = axios.create({
     baseURL : URI,
