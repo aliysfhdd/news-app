@@ -1,7 +1,7 @@
 import {Axios} from "./config";
 
 export default class APIService {
-    listNews(){
+    getListNews(){
         return Axios.get('portaljson')
     }
 }

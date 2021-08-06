@@ -3,17 +3,17 @@ import {BrowserRouter as Router} from "react-router-dom"
 import routes from "./routes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import './App.css'
 const route=routes()
 
 function App() {
   return (
-      <div>
-          <Header/>
+      <div className="news">
           <Router>
+          <Header/>
               {route}
-          </Router>
           <Footer/>
+          </Router>
       </div>
   );
 }

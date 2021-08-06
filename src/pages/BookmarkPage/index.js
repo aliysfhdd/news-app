@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
 import CardComponent from "../../components/Card";
 
 class BookmarkPage extends Component {
@@ -9,6 +8,7 @@ class BookmarkPage extends Component {
 
 
     removeFromBookmark = (item) => {
+        item.marked=false
         let listBookmark=this.state.bookmark
         listBookmark= listBookmark.filter(value => {return value!==item})
         this.setState({ bookmark: listBookmark});
@@ -17,10 +17,9 @@ class BookmarkPage extends Component {
 
     render() {
         return(
-            <div className="App">
-                Ini Bookmark <Link to='/'>Pindah</Link>
+            <div className="container list-news">
                 {this.state.bookmark.map((value,idx) => {
-                    return<CardComponent noAdd={true}key={value.id}
+                    return<CardComponent noAdd={true}key={idx}
                                          item={value} onAddItem={this.addToBookmark} onRemoveItem={this.removeFromBookmark}/>
                 })}
 
